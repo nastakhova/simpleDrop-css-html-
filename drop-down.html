@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+    <style>
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            background: #fff;
+            font: 14px/1.5 Arial, Helvetica, sans-serif;
+            color: #333;
+        }
+        
+        img {
+            border: 0;
+        }
+        
+        a {
+            color: aqua;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: rgb(103, 16, 241);
+        }
+        
+        .wrapper {
+            width: 960px;
+            margin: 0 auto;
+            background: #eee;
+            padding: 20px;
+        }
+        
+        .nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .nav ul:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        
+        .nav ul li {
+            float: left;
+            margin: 0 20px 0 0;
+            position: relative;
+        }
+        
+        .nav ul a {
+            padding: 10px;
+            display: block;
+            background: #fff;
+            border: 2px solid rgb(103, 16, 241);
+            color: rgb(103, 16, 241);
+            text-transform: uppercase;
+            border-radius: 0 10px 0 10px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease, background 0.3s ease;
+        }
+        
+        .nav ul li:hover a {
+            border-radius: 10px 0 10px 0;
+            color: #fff;
+            background: rgb(103, 16, 241);
+        }
+        
+        .nav ul ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            background: #fff;
+            border: 2px solid rgb(103, 16, 241);
+            border-radius: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(-20%);
+        }
+        
+        .nav ul li:last-child ul {
+            left: auto;
+            right: 0;
+        }
+        
+        .nav ul ul li {
+            float: none;
+            margin: 0;
+        }
+        
+        .nav ul ul ul {
+            top: 0;
+            left: 100%;
+        }
+        
+        .nav ul ul a,
+        .nav ul li:hover li a,
+        .nav ul li li:hover li a {
+            border: 0;
+            border-bottom: 1px solid rgb(103, 16, 241);
+            border-radius: 0;
+            background: none;
+            color: rgb(103, 16, 241);
+        }
+        
+        .nav ul li li:hover a,
+        .nav ul li li li:hover a {
+            color: #fff;
+            background: rgb(103, 16, 241);
+        }
+        
+        .nav ul ul a:hover {
+            border-radius: 0;
+        }
+        
+        .nav ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .nav ul li:hover ul ul {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20%);
+        }
+        
+        .nav ul li li:hover ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Item level 1</a></li>
+                    <li><a href="#">Item with drop</a>
+                        <ul>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Item with 2 drops</a>
+                        <ul>
+                            <li><a href="#">Item level 2</a></li>
+                            <li><a href="#">Item with drop</a>
+                                <ul>
+                                    <li><a href="#">Item level 3</a></li>
+                                    <li><a href="#">Item level 3</a></li>
+                                    <li><a href="#">Item level 3</a></li>
+                                    <li><a href="#">Item level 3</a></li>
+                                    <li><a href="#">Item level 3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Item level 2</a></li>
+                            <li><a href="#">Item level 2</a></li>
+                            <li><a href="#">Item level 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Item level 1</a></li>
+                    <li><a href="#">Item drop right</a>
+                        <ul>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                            <li><a href="#">Item in drop</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+
+</html>
